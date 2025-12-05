@@ -46,16 +46,13 @@ export default function App() {
             <div className="mt-6 text-sm text-slate-500"><strong>Built for:</strong> Estate agents · Letting teams · Property managers</div>
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-md">
-            <h3 className="font-semibold">Live demo — sample conversation</h3>
-            <div className="mt-4 space-y-3">
-              <div className="p-3 rounded-lg bg-slate-100">Visitor: Is the property pet-friendly?</div>
-              <div className="p-3 rounded-lg bg-slate-50">Yourd8ta: The landlord allows pets with a small additional deposit. Would you like to schedule a viewing?</div>
-              <div className="p-3 rounded-lg bg-slate-100">Visitor: Yes — next Wednesday afternoon?</div>
-              <div className="p-3 rounded-lg bg-slate-50">Yourd8ta: Great — I've suggested 2 slots and sent them a calendar invite. Confirm when convenient.</div>
-            </div>
-          </div>
-        </section>
+        <div className="bg-white rounded-2xl p-6 shadow-md">
+  <h3 className="font-semibold">Live demo — AI chat</h3>
+  <div className="mt-4">
+    <Chat />
+  </div>
+</div>
+
 
         {/* FEATURES */}
         <section id="features" className="py-12">
