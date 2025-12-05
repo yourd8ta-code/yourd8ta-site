@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-
+export default function App() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -70,5 +70,3 @@ import React, { useState } from "react";
     </div>
   );
 }
-export default App;
-
