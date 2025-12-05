@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Chat from "./components/Chat";
 
 export default function App() {
   const [email, setEmail] = useState("");
@@ -46,12 +47,13 @@ export default function App() {
             <div className="mt-6 text-sm text-slate-500"><strong>Built for:</strong> Estate agents · Letting teams · Property managers</div>
           </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow-md">
+   <div className="bg-white rounded-2xl p-6 shadow-md">
   <h3 className="font-semibold">Live demo — AI chat</h3>
   <div className="mt-4">
     <Chat />
   </div>
 </div>
+
 
 
         {/* FEATURES */}
