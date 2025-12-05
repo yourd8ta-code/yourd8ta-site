@@ -15,4 +15,5 @@ const handleSignup = async (e) => {
     alert("Something went wrong — please try again.");
   }
 };
+export default App;
 
