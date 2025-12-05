@@ -1,58 +1,18 @@
-import React, { useState } from "react";
-import Chat from "./components/Chat.js"; // .js extension
+const handleSignup = async (e) => {
+  e.preventDefault();
 
-export default function App() {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, message })
+  });
 
-  const handleSignup = (e) => {
-    e.preventDefault();
+  if (res.ok) {
     setSubmitted(true);
-    console.log({ email });
-  };
+    setEmail("");
+    setMessage("");
+  } else {
+    alert("Something went wrong — please try again.");
+  }
+};
 
-  return (
-    <div className="min-h-screen bg-gray-50 text-slate-800">
-      <header className="max-w-6xl mx-auto p-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-600 to-pink-500 flex items-center justify-center text-white font-bold">YD</div>
-          <div>
-            <h1 className="text-lg font-semibold">Yourd8ta</h1>
-            <p className="text-xs text-slate-500">AI-driven property management for estate agents</p>
-          </div>
-        </div>
-      </header>
-
-      <main className="max-w-6xl mx-auto px-6">
-        <section className="grid md:grid-cols-2 gap-8 items-center py-12">
-          <div>
-            <h2 className="text-4xl font-extrabold leading-tight">Automate enquiries. Fill more viewings. Delight landlords.</h2>
-            <p className="mt-4 text-lg text-slate-600">Yourd8ta uses AI to triage leads, answer questions, schedule viewings — so agents spend more time closing.</p>
-
-            <form onSubmit={handleSignup} className="mt-6 flex gap-3 max-w-md">
-              <input
-                type="email"
-                required
-                placeholder="your work email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 p-3 rounded-lg border border-slate-200"
-              />
-              <button className="px-4 py-3 rounded-lg bg-pink-500 text-white font-semibold">Request demo</button>
-            </form>
-
-            {submitted && <p className="mt-3 text-sm text-green-600">Thanks — we saved your request. We'll follow up.</p>}
-          </div>
-
-          <div className="bg-white rounded-2xl p-6 shadow-md">
-            <h3 className="font-semibold">Live demo — AI chat</h3>
-            <div className="mt-4">
-              <Chat />
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
-}
