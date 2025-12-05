@@ -20,9 +20,6 @@
     "node": "24.x"
   }
 }
-git add package.json
-git commit -m "Set Node version to 24.x"
-git push
 
 
 
