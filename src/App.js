@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Chat from "./components/Chat";
+import Chat from "./components/Chat.js"; // note .js extension if using "type": "module"
+
 
 export default function App() {
   const [email, setEmail] = useState("");
